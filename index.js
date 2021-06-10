@@ -94,11 +94,11 @@ window.onkeydown = function(e) {
             seter('x');
         break;
         case 'c':
-            const audioC = $("#rack")[0];
+            const audioC = $("#floor")[0];
             audioC.currentTime = 0;
             audioC.volume = parseFloat(volumeVal);
             audioC.play();
-            $('.name')[0].textContent = sounds[7].id;
+            $('.name')[0].textContent = sounds[8].id;
             seter('c');
         break;
     }
@@ -169,10 +169,10 @@ $('.x-but')[0].addEventListener('click', () => {
 });
 
 $('.c-but')[0].addEventListener('click', () => {
-    const audio = $("#rack")[0];
+    const audio = $("#floor")[0];
     audio.currentTime = 0;
     audio.volume = parseFloat(volumeVal);
     audio.play();
-    $('.name')[0].textContent = sounds[7].id;
+    $('.name')[0].textContent = sounds[8].id;
 });
 
