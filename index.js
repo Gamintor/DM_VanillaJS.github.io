@@ -8,9 +8,9 @@ const sounds = [
     {id:'Crash'},
     {id:'Ride'},
     {id:'Cowbell'},
-    {id:'Rack Tom'}, 
+    {id:'Rack Tom'},
     {id:'Floor Tom'}
-];
+  ];
 
 let volumeVal = 0.5;
 
@@ -104,75 +104,16 @@ window.onkeydown = function(e) {
     }
 }
 
-$('.q-but')[0].addEventListener('click', () => {
-    const audio = $("#bass")[0];
-    audio.currentTime = 0;
-    audio.volume = parseFloat(volumeVal);
-    audio.play();
-    $('.name')[0].textContent = sounds[0].id;
-});
+const audioElements = $('audio');
+const display = $('.name')[0];
 
-$('.w-but')[0].addEventListener('click', () => {
-    const audio = $("#snare")[0];
-    audio.currentTime = 0;
-    audio.volume = parseFloat(volumeVal);
-    audio.play();
-    $('.name')[0].textContent = sounds[1].id;
-});
-
-$('.e-but')[0].addEventListener('click', () => {
-    const audio = $("#closed")[0];
-    audio.currentTime = 0;
-    audio.volume = parseFloat(volumeVal);
-    audio.play();
-    $('.name')[0].textContent = sounds[2].id;
-});
-
-$('.a-but')[0].addEventListener('click', () => {
-    const audio = $("#opened")[0];
-    audio.currentTime = 0;
-    audio.volume = parseFloat(volumeVal);
-    audio.play();
-    $('.name')[0].textContent = sounds[3].id;
-});
-
-$('.s-but')[0].addEventListener('click', () => {
-    const audio = $("#crash")[0];
-    audio.currentTime = 0;
-    audio.volume = parseFloat(volumeVal);
-    audio.play();
-    $('.name')[0].textContent = sounds[4].id;
-});
-
-$('.d-but')[0].addEventListener('click', () => {
-    const audio = $("#ride")[0];
-    audio.currentTime = 0;
-    audio.volume = parseFloat(volumeVal);
-    audio.play();
-    $('.name')[0].textContent = sounds[5].id;
-});
-
-$('.y-but')[0].addEventListener('click', () => {
-    const audio = $("#cow")[0];
-    audio.currentTime = 0;
-    audio.volume = parseFloat(volumeVal);
-    audio.play();
-    $('.name')[0].textContent = sounds[6].id;
-});
-
-$('.x-but')[0].addEventListener('click', () => {
-    const audio = $("#rack")[0];
-    audio.currentTime = 0;
-    audio.volume = parseFloat(volumeVal);
-    audio.play();
-    $('.name')[0].textContent = sounds[7].id;
-});
-
-$('.c-but')[0].addEventListener('click', () => {
-    const audio = $("#floor")[0];
-    audio.currentTime = 0;
-    audio.volume = parseFloat(volumeVal);
-    audio.play();
-    $('.name')[0].textContent = sounds[8].id;
+$('button').forEach((but, i) => {
+    but.addEventListener('click', () => {
+        let audio = audioElements[i];
+        audio.currentTime = 0;
+        audio.volume = parseFloat(volumeVal);
+        audio.play();
+        display.textContent = sounds[i].id;
+    });
 });
 
