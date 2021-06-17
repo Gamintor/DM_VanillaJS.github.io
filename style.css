@@ -57,7 +57,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: inherit !important;
+    font-family: inherit;
     font-size: 2.5rem;
     font-weight: 600;
     color: rgba(204, 204, 204, 0.9);
